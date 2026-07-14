@@ -1,14 +1,28 @@
 const galleryItems = [
   {
-    src: './assets/placeholder-1.jpg',
-    alt: 'Placeholder image for an animal species',
+    src: 'https://github.com/user-attachments/assets/2b536392-2ddb-48b0-a607-9c6b9204b0d1',
+    alt: 'Gallery image 1',
     commonName: 'Common name',
     scientificName: 'Scientific name',
     fact: 'Replace this with a fun fact.'
   },
   {
-    src: './assets/placeholder-2.jpg',
-    alt: 'Placeholder image for a second animal species',
+    src: 'https://github.com/user-attachments/assets/24da7c3e-8960-4fda-9a42-95daf657e075',
+    alt: 'Gallery image 2',
+    commonName: 'Common name',
+    scientificName: 'Scientific name',
+    fact: 'Replace this with a fun fact.'
+  },
+  {
+    src: 'https://github.com/user-attachments/assets/31bfeeaa-87ff-4a3c-8e26-5e21e5bf1afb',
+    alt: 'Gallery image 3',
+    commonName: 'Common name',
+    scientificName: 'Scientific name',
+    fact: 'Replace this with a fun fact.'
+  },
+  {
+    src: 'https://github.com/user-attachments/assets/547d31d7-b290-425d-a9bb-64cbc70fb77d',
+    alt: 'Gallery image 4',
     commonName: 'Common name',
     scientificName: 'Scientific name',
     fact: 'Replace this with a fun fact.'
