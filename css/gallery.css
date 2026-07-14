@@ -1,0 +1,232 @@
+/* Gallery theme styles */
+:root {
+  --gallery-bg: #0f1115;
+  --gallery-surface: #171a21;
+  --gallery-surface-2: #202532;
+  --gallery-text: #f4f7fb;
+  --gallery-muted: #c0cad8;
+  --gallery-accent: #8ec5ff;
+  --gallery-border: rgba(255, 255, 255, 0.12);
+  --gallery-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  --gallery-radius: 20px;
+  --gallery-max: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.theme-deck {
+  margin: 0;
+  background: var(--gallery-bg);
+  color: var(--gallery-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body.theme-deck a {
+  color: var(--gallery-accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--gallery-text);
+  color: #0b1220;
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.gallery-shell {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.gallery-frame {
+  max-width: var(--gallery-max);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-header,
+.gallery-panel,
+.gallery-grid-card,
+.gallery-caption {
+  background: color-mix(in srgb, var(--gallery-surface) 92%, transparent);
+  border: 1px solid var(--gallery-border);
+  border-radius: var(--gallery-radius);
+  box-shadow: var(--gallery-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.gallery-header {
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.gallery-header h1,
+.gallery-panel h2,
+.gallery-caption h2 {
+  margin: 0;
+}
+
+.gallery-header p,
+.gallery-caption p,
+.gallery-meta,
+.gallery-help,
+.gallery-fact,
+.gallery-empty,
+.gallery-note {
+  color: var(--gallery-muted);
+}
+
+.deck-kicker {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--gallery-accent);
+}
+
+.gallery-mode-toggle {
+  display: inline-flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gallery-mode-toggle button,
+.gallery-nav button {
+  appearance: none;
+  border: 1px solid var(--gallery-border);
+  background: var(--gallery-surface-2);
+  color: var(--gallery-text);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gallery-mode-toggle button[aria-pressed='true'] {
+  background: var(--gallery-accent);
+  color: #0b1220;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.gallery-panel {
+  padding: 1rem;
+}
+
+.gallery-stage {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.gallery-image-wrap {
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: calc(var(--gallery-radius) - 4px);
+  border: 1px solid var(--gallery-border);
+  background: #0a0d12;
+}
+
+.gallery-caption {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.gallery-meta {
+  font-size: 0.95rem;
+}
+
+.gallery-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid-card {
+  overflow: hidden;
+  display: grid;
+  padding: 0;
+}
+
+.gallery-grid-card button {
+  all: unset;
+  cursor: pointer;
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+}
+
+.gallery-grid-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #0a0d12;
+  display: block;
+}
+
+.gallery-grid-card .gallery-card-copy {
+  padding: 0 1rem 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.gallery-grid-card .gallery-card-copy strong {
+  color: var(--gallery-text);
+}
+
+.gallery-grid-card .gallery-card-copy span {
+  color: var(--gallery-muted);
+  font-size: 0.95rem;
+}
+
+.gallery-view[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .gallery-stage {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
