@@ -3,136 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+  <meta name="color-scheme" content="light dark">
+  <title>KBS Art Project Gallery</title>
   <link rel="stylesheet" href="./css/shared.css">
-  <link rel="stylesheet" href="./css/deck.css">
+  <link rel="stylesheet" href="./css/gallery.css">
 </head>
-<!-- DECK: full-screen scroll-snap slides. Search: EDIT HERE · ADD -->
-<body class="theme-deck">
-
-
+<body class="theme-gallery">
   <a class="skip-link" href="#main">Skip to content</a>
 
-
-
-  <nav class="deck-dots" aria-label="Slide navigation">
-    <a href="#slide-1" aria-current="true"><span class="visually-hidden">Title</span></a>
-    <a href="#slide-2"><span class="visually-hidden">About</span></a>
-    <a href="#slide-3"><span class="visually-hidden">Work</span></a>
-    <a href="#slide-4"><span class="visually-hidden">Media</span></a>
-    <a href="#slide-5"><span class="visually-hidden">Contact</span></a>
-  </nav>
-    <div class="fill-checklist" id="fill-checklist">
-      <strong>📋 To fully fill out Deck</strong>
-      <span class="fill-checklist-summary">Gather: 1 photo · 1 PDF · 1 video embed</span>
-      <p class="fill-checklist-intro">Replace every placeholder below. No extra sections required. Delete this box when finished.</p>
-      <p class="fill-checklist-ai"><strong>Using an AI coding assistant?</strong> Copy this whole blue box into Cursor, Copilot, or another coding assistant. Ask it to go through each item with you (text, photos, PDFs, video), update <code>index.html</code>, and tell you what to put in <code>assets/</code>.</p>
-
-
-      <p><strong>Text to write</strong> (search <code>EDIT HERE</code> or replace placeholder copy)</p>
-      <ul class="fill-checklist-text">
-      <li>Name, role, and field (title slide)</li>
-      <li>About: 1 paragraph</li>
-      <li>Selected work: 3 items</li>
-      <li>Email, GitHub</li>
-      </ul>
-
-      <p><strong>Photos to upload</strong> (to <code>assets/</code> on GitHub; JPG recommended, about 500 KB each)</p>
-      <table class="fill-checklist-table">
-        <thead><tr><th>Qty</th><th>Filename</th><th>Min size</th><th>Find in HTML</th></tr></thead>
-        <tbody>
-      <tr><td>1× Photo or project image on media slide</td><td><code>assets/hero.jpg</code></td><td>800×800 px min<br>1:1 or 4:3</td><td>Search <code>ADD HERO IMAGE HERE</code></td></tr>
-        </tbody>
-      </table>
-
-      <p><strong>PDFs to upload</strong></p>
-      <table class="fill-checklist-table">
-        <thead><tr><th>Document</th><th>Filename</th><th>Notes</th></tr></thead>
-        <tbody>
-      <tr><td>CV</td><td><code>assets/cv.pdf</code></td><td>PDF link on contact slide</td></tr>
-        </tbody>
-      </table>
-    <p><strong>Video</strong></p>
-    <ul><li><strong>1× video</strong>: YouTube/Vimeo embed on media slide (search <code>ADD VIDEO HERE</code>)</li>
-    </ul>
-    </div>
-
-    <main class="deck" id="main">
-
-    <section class="deck-slide deck-slide--title" id="slide-1" tabindex="-1">
-      <div class="deck-inner">
-        <p class="deck-kicker">Portfolio · 2025</p>
-        <h1>Your Name</h1>
-        <p class="deck-sub">[Your role] · [Your field]</p>
-        <p class="deck-hint">Scroll down. One slide per idea.</p>
-      </div>
-      <span class="deck-num" aria-hidden="true">01</span>
-    </section>
-
-    <section class="deck-slide" id="slide-2" tabindex="-1" aria-labelledby="deck-about">
-      <div class="deck-inner">
-        <h2 id="deck-about">About</h2>
-        <p class="deck-text">I am a [role] working on [area]. On this slide: who I am and what I study. Next slides cover work and media.</p>
-        <div class="privacy-notice deck-notice">
-          <strong>🔒 Public site</strong>
-          See the <a href="https://loganmjones.github.io/PortfolioTraining/guide.html#privacy">privacy guide</a> before you publish.
+  <main class="gallery-shell" id="main">
+    <section class="gallery-frame" aria-labelledby="gallery-title">
+      <header class="gallery-header">
+        <div>
+          <p class="deck-kicker">KBS Art Project · Animal Gallery</p>
+          <h1 id="gallery-title">Two-mode gallery template</h1>
+          <p>Use slideshow mode to present one organism at a time, or switch to grid mode for a zoomed-out view of the full collection.</p>
         </div>
-        <div class="trainer-tip deck-tip">
-          <strong>👋 Deck layout</strong>
-          Full-screen slides. Search <code>EDIT HERE</code>. File: <code>index.html</code>
+
+        <div class="gallery-mode-toggle" role="tablist" aria-label="Gallery view mode">
+          <button id="mode-slideshow" type="button" role="tab" aria-controls="slideshow-view" aria-selected="true" aria-pressed="true">Slideshow view</button>
+          <button id="mode-grid" type="button" role="tab" aria-controls="grid-view" aria-selected="false" aria-pressed="false">Gallery grid</button>
         </div>
-      </div>
-      <span class="deck-num" aria-hidden="true">02</span>
-    </section>
 
-    <section class="deck-slide deck-slide--dark" id="slide-3" tabindex="-1" aria-labelledby="deck-work">
-      <div class="deck-inner">
-        <h2 id="deck-work">Selected work</h2>
-        <ul class="deck-list">
-          <li><strong>Research Intern</strong>, Lab Name (2025)<br><span>One-line outcome.</span></li>
-          <li><strong>M.S. candidate</strong>, University (Expected 2027)<br><span>Focus area.</span></li>
-          <li><strong>Project</strong>, <a href="#">Link</a><br><span>What you built.</span></li>
-        </ul>
-      </div>
-      <span class="deck-num" aria-hidden="true">03</span>
-    </section>
+        <p class="gallery-help">Add images later in <code>assets/</code>, then update the placeholder filenames in the data list below.</p>
+      </header>
 
-    <section class="deck-slide deck-slide--media" id="slide-4" tabindex="-1" aria-labelledby="deck-media">
-      <div class="deck-inner deck-inner--wide">
-        <h2 id="deck-media">Media</h2>
-        <div class="deck-media-grid">
-          <div class="media-placeholder media-placeholder--video" role="img" aria-label="Video placeholder">
-            <span>ADD VIDEO HERE</span>
-            <small>Project demo or talk recording</small>
+      <section class="gallery-view" id="slideshow-view" role="tabpanel" aria-labelledby="mode-slideshow">
+        <div class="gallery-panel">
+          <div class="gallery-stage">
+            <figure class="gallery-image-wrap">
+              <img id="slide-image" class="gallery-image" src="./assets/placeholder-1.jpg" alt="Placeholder animal image">
+              <figcaption class="gallery-note" id="slide-position">Image 1 of 0</figcaption>
+            </figure>
+
+            <aside class="gallery-caption" aria-live="polite">
+              <h2 id="slide-common-name">Common name</h2>
+              <p class="gallery-meta" id="slide-scientific-name">Scientific name: <em>Placeholder scientific name</em></p>
+              <p class="gallery-fact" id="slide-fact">Fun fact: Replace this text with a short fact about the organism.</p>
+              <p class="gallery-empty" id="slide-alt">Alt text: Replace with a descriptive accessibility label.</p>
+
+              <div class="gallery-nav" aria-label="Slideshow navigation">
+                <button id="prev-slide" type="button">Previous</button>
+                <button id="next-slide" type="button">Next</button>
+              </div>
+            </aside>
           </div>
-          <figure class="media-figure">
-            <div class="media-placeholder" role="img" aria-label="Image placeholder">
-              <span>ADD HERO IMAGE HERE</span>
-            </div>
-            <figcaption>Your photo or a project still.</figcaption>
-          </figure>
         </div>
-      </div>
-      <span class="deck-num" aria-hidden="true">04</span>
-    </section>
+      </section>
 
-    <section class="deck-slide deck-slide--accent" id="slide-5" tabindex="-1" aria-labelledby="deck-contact">
-      <div class="deck-inner">
-        <h2 id="deck-contact">Questions after the talk</h2>
-        <p class="deck-contact-line"><a href="mailto:you@university.edu">you@university.edu</a></p>
-        <p class="deck-contact-line"><a href="https://github.com/yourusername" rel="noopener noreferrer">GitHub</a> · <a href="./assets/cv.pdf">Download CV</a></p>
-        <p class="deck-footer-note">© <span id="year"></span> Your Name</p>
-      </div>
-      <span class="deck-num" aria-hidden="true">05</span>
+      <section class="gallery-view" id="grid-view" role="tabpanel" aria-labelledby="mode-grid" hidden>
+        <div class="gallery-panel">
+          <div class="gallery-grid" id="gallery-grid" aria-label="All gallery images"></div>
+        </div>
+      </section>
     </section>
-
   </main>
 
-  <footer class="template-credit-footer">
-    <p class="template-credit"><a href="https://loganmjones.github.io/PortfolioTraining/" rel="noopener noreferrer">Portfolio Training</a> · <a href="https://github.com/LoganMJones/PortfolioTraining/raw/main/solo/zips/deck.zip" download rel="noopener noreferrer">Download ZIP</a></p>
-    <p class="architect-credit">Built by <a href="https://www.loganjones.org/" rel="noopener noreferrer">Logan Jones</a> with help from <a href="https://cursor.com/" target="_blank" rel="noopener noreferrer">Cursor</a>.</p>
-  </footer>
-
-  <script src="./js/main.js"></script>
+  <script src="./js/gallery.js" defer></script>
 </body>
 </html>
