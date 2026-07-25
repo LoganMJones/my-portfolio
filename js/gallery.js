@@ -11,7 +11,7 @@ const galleryItems = [
     alt: 'Macro side view of a male non-biting midge with large feathery antennae, a slender tan body, spotted wings, and long thin legs on a mossy textured surface.',
     commonName: 'Non-biting Midge',
     scientificName: 'Chironomidae',
-    fact: 'Male midges use those plumose antennae to pick up the wingbeat rhythm of females in mating swarms—and adults of most species never bite.'
+    fact: 'Male midges use those plumose antennae to pick up the wingbeat rhythm of females in mating swarms—and chironomids never bite.'
   },
   {
     src: './assets/3-DSC09391.jpg',
@@ -24,15 +24,15 @@ const galleryItems = [
     src: './assets/4-DSC09420.jpg',
     alt: 'Side-profile macro of an oak timberworm beetle with a shiny reddish-brown head and snout, long antennae at the tip of the snout, and dark ridged wing covers marked with pale yellow dashes.',
     commonName: 'Oak Timberworm',
-    scientificName: 'Arrenodes minutus',
-    fact: 'Females and males have snouts of different lengths; larvae tunnel through living oak wood, sometimes leaving distinctive “powderpost” galleries.'
+    scientificName: 'Arrhenodes minutus',
+    fact: 'The female drills egg holes with her long snout; larvae bore galleries that leave value-destroying “pin holes” in oak timber.'
   },
   {
     src: './assets/5-DSC09464.jpg',
     alt: 'Macro of a silky field ant on a speckled brown branch, its black body covered in fine silvery hairs that catch the light.',
     commonName: 'Silky Field Ant',
     scientificName: 'Formica subsericea',
-    fact: 'Those fine silver hairs give this Formica ant its “silky” look and help it survive exposed nest life in open fields and woodland edges.'
+    fact: 'Formica subsericea is regularly raided by sanguinea-group Formica and Polyergus slave-makers—its workers are among the most commonly enslaved ants in eastern North America.'
   },
   {
     src: './assets/6-DSC09586.jpg',
@@ -46,7 +46,7 @@ const galleryItems = [
     alt: 'A glossy eastern black carpenter ant walks across coarse sandy ground, carrying a small dark object in its mandibles.',
     commonName: 'Eastern Black Carpenter Ant',
     scientificName: 'Camponotus pennsylvanicus',
-    fact: 'Carpenter ants do not eat wood—they excavate damp or soft timber into nest galleries and forage for insects and honeydew.'
+    fact: 'Despite the name, carpenter ants do not eat wood—they excavate damp or soft timber into nest galleries and forage for insects and honeydew.'
   },
   {
     src: './assets/8-DSC09654.jpg',
@@ -57,9 +57,9 @@ const galleryItems = [
   },
   {
     src: './assets/9-DSC09679.jpg',
-    alt: 'A slender black spider wasp with iridescent wings drags a paralyzed orb-weaver spider across pebbly soil scattered with dried plant bits.',
-    commonName: 'Five-spotted Spider Wasp',
-    scientificName: 'Episyron quinquenotatus',
+    alt: 'A slender black spider wasp with iridescent blue-tinged wings drags a paralyzed spider across pebbly soil scattered with dried plant bits.',
+    commonName: 'Spider Wasp',
+    scientificName: 'Pompilidae',
     fact: 'Spider wasps sting spiders just enough to paralyze them, then stash each one in a burrow as a living meal for a single larva.'
   },
   {
@@ -102,7 +102,7 @@ const galleryItems = [
     alt: 'A group of amber-and-brown Tennessee collared ants swarms over a thick dark caterpillar wedged in rough tree bark with moss nearby.',
     commonName: 'Tennessee Collared Ant',
     scientificName: 'Aphaenogaster tennesseensis',
-    fact: 'These woodland ants often hunt or scavenge cooperatively, overwhelming prey far larger than any single worker.'
+    fact: 'One of only two parasitic Aphaenogaster in the Americas: queens take over colonies of A. rudis or A. fulva rather than founding nests alone.'
   },
   {
     src: './assets/16-DSC00074.jpg',
@@ -130,14 +130,14 @@ const galleryItems = [
     alt: 'A translucent green male non-biting midge with dense feathery antennae, long pale legs, and clear wings stands on a finely hairy green leaf.',
     commonName: 'Non-biting Midge',
     scientificName: 'Chironomidae',
-    fact: 'Adult midges of many species do not feed at all; their brief lives above water are mostly about mating and laying eggs.'
+    fact: 'Adults of many chironomids do not feed at all; their brief lives above water are mostly about mating and laying eggs.'
   },
   {
     src: './assets/20-DSC00222.jpg',
     alt: 'A bright yellow giant mayfly with transparent veined wings, bulging eyes, and two extremely long trailing tails rests on dark furrowed tree bark.',
     commonName: 'Giant Mayfly',
     scientificName: 'Hexagenia limbata',
-    fact: 'Adult mayflies often live only hours to a day or two—many never feed, existing mainly to emerge, mate, and lay eggs.'
+    fact: 'Adult mayflies often live only hours to a day or two—they never feed (mouthparts are vestigial), existing mainly to emerge, mate, and lay eggs.'
   },
   {
     src: './assets/21-DSC00235.jpg',
@@ -183,8 +183,8 @@ const galleryItems = [
   },
   {
     src: './assets/27-DSC00464.jpg',
-    alt: 'A gold-headed click beetle with a metallic copper-pink pronotum and black ridged wing covers rests diagonally on a light green leaf.',
-    commonName: 'Gold-headed Click Beetle',
+    alt: 'A click beetle with a metallic copper-pink pronotum and black ridged wing covers rests diagonally on a light green leaf.',
+    commonName: 'Click Beetle',
     scientificName: 'Limonius aurifer',
     fact: 'Click beetles can snap a special spine to launch themselves into the air with an audible “click” if flipped onto their backs.'
   },
@@ -228,7 +228,7 @@ const galleryItems = [
     alt: 'A sleek black spider wasp hauls a paralyzed tan spider across a brick-and-mortar wall, long legs and iridescent wings catching the light.',
     commonName: 'Spider Wasp',
     scientificName: 'Auplopus',
-    fact: 'Some spider wasps chew the legs off paralyzed spiders to make them easier to carry into narrow nest cells.'
+    fact: 'Some Auplopus spider wasps chew the legs off paralyzed spiders so the prey fits through narrow mud nest cells.'
   },
   {
     src: './assets/34-DSC00900.jpg',
@@ -298,7 +298,7 @@ const galleryItems = [
     alt: 'A mottled brown dragonfly nymph crawls across glistening mud among thin green plant stems, its wide head and large eyes sharp in the foreground.',
     commonName: 'Dragonfly Nymph',
     scientificName: 'Anisoptera',
-    fact: 'Dragonfly nymphs strike prey with a hinged lower lip that shoots forward in a split second—an underwater “mask” unique among insects.'
+    fact: 'Dragonfly nymphs strike prey with a hinged lower lip that shoots forward in a split second—an underwater “mask” unique to dragonflies and damselflies.'
   },
   {
     src: './assets/44-DSC01345.jpg',
@@ -312,7 +312,7 @@ const galleryItems = [
     alt: 'Two dark, yellow-speckled speckled sharpshooters mate end-to-end on a green stem; one shows bright white waxy brochosome patches on its side.',
     commonName: 'Speckled Sharpshooter',
     scientificName: 'Paraulacizes irrorata',
-    fact: 'Female sharpshooters make microscopic soccer-ball-shaped wax granules called brochosomes and later coat their eggs with them for protection.'
+    fact: 'Female sharpshooters make a specialized form of brochosome to coat their egg nests; both sexes also produce body-coating brochosomes.'
   },
   {
     src: './assets/46-DSC01386.jpg',
@@ -361,7 +361,7 @@ const galleryItems = [
     alt: 'Two flat-backed millipedes crawl on weathered mossy wood—one dark glossy brown and curled, the other smaller and tan—with many pale legs visible beneath each segment.',
     commonName: 'Traveling Cherry Millipede',
     scientificName: 'Pleuroloma flavipes',
-    fact: 'Flat-backed millipedes help recycle forests by chewing through leaf litter and rotting wood, releasing nutrients back into the soil.'
+    fact: 'Named for rare mass marches—one 1950 Indiana count put about 6,000 on a single bridge—and for the cherry-like benzaldehyde released with hydrogen cyanide as a defense.'
   },
   {
     src: './assets/53-DSC01543.jpg',
@@ -381,7 +381,6 @@ const slidePosition = document.getElementById('slide-position');
 const slideCommonName = document.getElementById('slide-common-name');
 const slideScientificName = document.getElementById('slide-scientific-name');
 const slideFact = document.getElementById('slide-fact');
-const slideAlt = document.getElementById('slide-alt');
 const prevSlide = document.getElementById('prev-slide');
 const nextSlide = document.getElementById('next-slide');
 const galleryGrid = document.getElementById('gallery-grid');
@@ -406,7 +405,6 @@ function renderSlide(index) {
     slideCommonName.textContent = 'Add gallery items';
     slideScientificName.innerHTML = 'Scientific name: <em>—</em>';
     slideFact.textContent = 'Fun fact: Add items to the galleryItems array in the script.';
-    slideAlt.textContent = 'Alt text: Add descriptive alt text for each image.';
     prevSlide.disabled = true;
     nextSlide.disabled = true;
     return;
@@ -419,7 +417,6 @@ function renderSlide(index) {
   slideCommonName.textContent = item.commonName;
   slideScientificName.innerHTML = `Scientific name: <em>${item.scientificName}</em>`;
   slideFact.textContent = `Fun fact: ${item.fact}`;
-  slideAlt.textContent = `Alt text: ${item.alt}`;
   prevSlide.disabled = galleryItems.length < 2;
   nextSlide.disabled = galleryItems.length < 2;
 }
