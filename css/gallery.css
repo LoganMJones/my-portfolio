@@ -130,18 +130,24 @@ body.theme-deck a {
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  align-items: start;
+  grid-template-areas:
+    'image caption'
+    'nav nav';
+  align-items: stretch;
 }
 
 .gallery-image-wrap {
+  grid-area: image;
   margin: 0;
   display: grid;
   gap: 0.75rem;
+  align-content: start;
 }
 
 .gallery-image {
   width: 100%;
   aspect-ratio: 4 / 3;
+  height: auto;
   object-fit: cover;
   border-radius: calc(var(--gallery-radius) - 4px);
   border: 1px solid var(--gallery-border);
@@ -149,9 +155,27 @@ body.theme-deck a {
 }
 
 .gallery-caption {
+  grid-area: caption;
   padding: 1rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
+  /* Size to the image column; do not expand the row when facts are long */
+  height: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.gallery-caption h2,
+.gallery-meta {
+  flex: 0 0 auto;
+}
+
+.gallery-fact {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  overflow-y: auto;
 }
 
 .gallery-meta {
@@ -159,10 +183,12 @@ body.theme-deck a {
 }
 
 .gallery-nav {
+  grid-area: nav;
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
   flex-wrap: nowrap;
+  width: min(100%, 28rem);
 }
 
 .gallery-nav button {
@@ -220,6 +246,19 @@ body.theme-deck a {
 @media (max-width: 860px) {
   .gallery-stage {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'image'
+      'nav'
+      'caption';
+  }
+
+  .gallery-caption {
+    height: 14rem;
+    min-height: 14rem;
+  }
+
+  .gallery-nav {
+    width: 100%;
   }
 }
 
