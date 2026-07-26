@@ -28,7 +28,9 @@
         <div class="gallery-panel">
           <div class="gallery-stage">
             <figure class="gallery-image-wrap">
-              <img id="slide-image" class="gallery-image" src="./assets/1-DSC09347.jpg" alt="Four people stand on an ornate arched wooden bridge over still water at Kellogg Biological Station, with Gull Lake glowing behind them and green trees framing the scene." width="1600" height="1066" decoding="async" fetchpriority="high">
+              <button type="button" id="slide-zoom-trigger" class="gallery-zoom-trigger" aria-label="View full-resolution photo">
+                <img id="slide-image" class="gallery-image" src="./assets/1-DSC09347.jpg" alt="Four people stand on an ornate arched wooden bridge over still water at Kellogg Biological Station, with Gull Lake glowing behind them and green trees framing the scene." width="1600" height="1066" decoding="async" fetchpriority="high">
+              </button>
               <figcaption class="gallery-note" id="slide-position">Image 1 of 53</figcaption>
             </figure>
 
@@ -53,6 +55,16 @@
       </section>
     </section>
   </main>
+
+  <dialog id="zoom-dialog" class="gallery-zoom-dialog" aria-label="Full-resolution photo">
+    <form method="dialog" class="gallery-zoom-toolbar">
+      <p class="gallery-zoom-hint">Full resolution · scroll to pan if needed</p>
+      <button type="submit" value="close" id="zoom-close">Close</button>
+    </form>
+    <div class="gallery-zoom-stage">
+      <img id="zoom-image" class="gallery-zoom-image" alt="">
+    </div>
+  </dialog>
 
   <script src="./js/gallery.js" defer></script>
 </body>

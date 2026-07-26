@@ -142,6 +142,18 @@ body.theme-deck a {
   align-content: start;
 }
 
+.gallery-zoom-trigger {
+  all: unset;
+  cursor: zoom-in;
+  display: block;
+  border-radius: calc(var(--gallery-radius) - 4px);
+}
+
+.gallery-zoom-trigger:focus-visible {
+  outline: 2px solid var(--gallery-accent);
+  outline-offset: 3px;
+}
+
 .gallery-image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -150,6 +162,7 @@ body.theme-deck a {
   border-radius: calc(var(--gallery-radius) - 4px);
   border: 1px solid var(--gallery-border);
   background: #0a0d12;
+  display: block;
 }
 
 .gallery-caption {
@@ -240,6 +253,66 @@ body.theme-deck a {
 
 .gallery-view[hidden] {
   display: none !important;
+}
+
+.gallery-zoom-dialog {
+  width: min(96vw, 1600px);
+  height: min(94vh, 1200px);
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--gallery-border);
+  border-radius: var(--gallery-radius);
+  background: #0a0d12;
+  color: var(--gallery-text);
+  box-shadow: var(--gallery-shadow);
+}
+
+.gallery-zoom-dialog::backdrop {
+  background: rgba(5, 8, 12, 0.82);
+}
+
+.gallery-zoom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gallery-border);
+  background: var(--gallery-surface);
+}
+
+.gallery-zoom-hint {
+  margin: 0;
+  color: var(--gallery-muted);
+  font-size: 0.9rem;
+}
+
+.gallery-zoom-toolbar button {
+  appearance: none;
+  border: 1px solid var(--gallery-border);
+  background: var(--gallery-surface-2);
+  color: var(--gallery-text);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gallery-zoom-stage {
+  height: calc(100% - 3.5rem);
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+}
+
+.gallery-zoom-image {
+  max-width: none;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 860px) {

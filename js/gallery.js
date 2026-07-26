@@ -377,6 +377,7 @@ const gridView = document.getElementById('grid-view');
 const modeSlideshow = document.getElementById('mode-slideshow');
 const modeGrid = document.getElementById('mode-grid');
 const slideImage = document.getElementById('slide-image');
+const slideZoomTrigger = document.getElementById('slide-zoom-trigger');
 const slidePosition = document.getElementById('slide-position');
 const slideCommonName = document.getElementById('slide-common-name');
 const slideScientificName = document.getElementById('slide-scientific-name');
@@ -384,8 +385,14 @@ const slideFact = document.getElementById('slide-fact');
 const prevSlide = document.getElementById('prev-slide');
 const nextSlide = document.getElementById('next-slide');
 const galleryGrid = document.getElementById('gallery-grid');
+const zoomDialog = document.getElementById('zoom-dialog');
+const zoomImage = document.getElementById('zoom-image');
 
 let currentIndex = 0;
+
+function fullSrcFor(src) {
+  return src.replace('./assets/', './assets/full/');
+}
 
 function setMode(mode) {
   const slideshowActive = mode === 'slideshow';
@@ -407,6 +414,7 @@ function renderSlide(index) {
     slideFact.textContent = 'Fun fact: Add items to the galleryItems array in the script.';
     prevSlide.disabled = true;
     nextSlide.disabled = true;
+    slideZoomTrigger.disabled = true;
     return;
   }
 
@@ -419,6 +427,16 @@ function renderSlide(index) {
   slideFact.textContent = `Fun fact: ${item.fact}`;
   prevSlide.disabled = galleryItems.length < 2;
   nextSlide.disabled = galleryItems.length < 2;
+  slideZoomTrigger.disabled = false;
+  slideZoomTrigger.setAttribute('aria-label', `View full-resolution photo of ${item.commonName}`);
+}
+
+function openZoom(index) {
+  const item = galleryItems[index];
+  if (!item) return;
+  zoomImage.alt = item.alt;
+  zoomImage.src = fullSrcFor(item.src);
+  zoomDialog.showModal();
 }
 
 function goToNext() {
@@ -476,8 +494,14 @@ modeSlideshow.addEventListener('click', () => setMode('slideshow'));
 modeGrid.addEventListener('click', () => setMode('grid'));
 prevSlide.addEventListener('click', goToPrevious);
 nextSlide.addEventListener('click', goToNext);
+slideZoomTrigger.addEventListener('click', () => openZoom(currentIndex));
+
+zoomDialog.addEventListener('click', (event) => {
+  if (event.target === zoomDialog) zoomDialog.close();
+});
 
 document.addEventListener('keydown', (event) => {
+  if (zoomDialog.open) return;
   if (slideshowView.hidden) return;
   if (event.key === 'ArrowLeft') goToPrevious();
   if (event.key === 'ArrowRight') goToNext();
