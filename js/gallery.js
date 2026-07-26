@@ -401,9 +401,15 @@ function fullSrcFor(src) {
   return src.replace('./assets/', './assets/full/');
 }
 
-function webpSrcset(src) {
+function webpPreview(src, width) {
   const base = assetBase(src);
-  return `./assets/webp/${base}-960.webp 960w, ./assets/webp/${base}.webp 1600w`;
+  return width === 960
+    ? `./assets/webp/${base}-960.webp`
+    : `./assets/webp/${base}.webp`;
+}
+
+function webpSrcset(src) {
+  return `${webpPreview(src, 960)} 960w, ${webpPreview(src, 1600)} 1600w`;
 }
 
 function syncCaptionHeight() {
@@ -427,8 +433,9 @@ function setMode(mode) {
 
 function renderSlide(index) {
   if (!galleryItems.length) {
-    slideImage.src = '';
+    slideImage.removeAttribute('src');
     slideImage.alt = '';
+    if (slideSourceWebp) slideSourceWebp.removeAttribute('srcset');
     slidePosition.textContent = 'No images added yet';
     slideCommonName.textContent = 'Add gallery items';
     slideScientificName.innerHTML = 'Scientific name: <em>—</em>';
@@ -440,11 +447,24 @@ function renderSlide(index) {
   }
 
   const item = galleryItems[index];
+  const nextWebp = webpPreview(item.src, 1600);
+  const nextJpg = item.src;
+
+  // Browsers often ignore dynamic <source srcset> updates inside <picture>.
+  // Point the img at the WebP directly and force a reload each slide change.
+  if (slideSourceWebp) {
+    slideSourceWebp.removeAttribute('srcset');
+  }
+  slideImage.removeAttribute('src');
+  slideImage.alt = item.alt;
+  slideImage.onerror = () => {
+    slideImage.onerror = null;
+    slideImage.src = nextJpg;
+  };
+  slideImage.src = nextWebp;
   if (slideSourceWebp) {
     slideSourceWebp.srcset = webpSrcset(item.src);
   }
-  slideImage.src = item.src;
-  slideImage.alt = item.alt;
   slideImage.fetchPriority = index === 0 ? 'high' : 'auto';
   slidePosition.textContent = `Image ${index + 1} of ${galleryItems.length}`;
   slideCommonName.textContent = item.commonName;
