@@ -50,10 +50,10 @@ const galleryItems = [
   },
   {
     src: './assets/8-DSC09654.jpg',
-    alt: 'A shiny eastern black carpenter ant stands on a green leaf beside a much smaller pale insect, with leaf veins soft in the background.',
-    commonName: 'Eastern Black Carpenter Ant',
-    scientificName: 'Camponotus pennsylvanicus',
-    fact: 'Workers often haul dead insects and other protein back to the nest to feed developing larvae.'
+    alt: 'A glossy black slender ant-mimic jumping spider on a green leaf, with a bulbous abdomen marked by a pale dorsal spot and thin pale legs, beside a smaller winged insect.',
+    commonName: 'Slender Ant-mimic Jumper',
+    scientificName: 'Synemosyna formica',
+    fact: 'This jumping spider mimics ants in shape and movement, a disguise that can deter predators that avoid ants.'
   },
   {
     src: './assets/9-DSC09679.jpg',
