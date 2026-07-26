@@ -155,10 +155,10 @@ const galleryItems = [
   },
   {
     src: './assets/23-DSC00340.jpg',
-    alt: 'Side profile of a small dark turtle held in soft light, duckweed flecking its rough shell and a pale stripe running along its upturned head.',
-    commonName: 'Turtle',
-    scientificName: 'Testudines',
-    fact: 'Small aquatic turtles often carry duckweed and algae on their shells after time in still water.'
+    alt: 'Side profile of a common snapping turtle held in soft light, duckweed flecking its rough dark shell and its head tilted upward.',
+    commonName: 'Common Snapping Turtle',
+    scientificName: 'Chelydra serpentina',
+    fact: 'Snapping turtles can live for decades; adults are powerful aquatic predators that mostly avoid people unless handled.'
   },
   {
     src: './assets/24-DSC00377.jpg',
