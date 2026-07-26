@@ -387,11 +387,22 @@ const nextSlide = document.getElementById('next-slide');
 const galleryGrid = document.getElementById('gallery-grid');
 const zoomDialog = document.getElementById('zoom-dialog');
 const zoomImage = document.getElementById('zoom-image');
+const imageWrap = document.querySelector('.gallery-image-wrap');
+const captionPanel = document.querySelector('.gallery-caption');
 
 let currentIndex = 0;
 
 function fullSrcFor(src) {
   return src.replace('./assets/', './assets/full/');
+}
+
+function syncCaptionHeight() {
+  if (!imageWrap || !captionPanel) return;
+  if (window.matchMedia('(max-width: 860px)').matches) {
+    captionPanel.style.height = '';
+    return;
+  }
+  captionPanel.style.height = `${imageWrap.offsetHeight}px`;
 }
 
 function setMode(mode) {
@@ -429,6 +440,7 @@ function renderSlide(index) {
   nextSlide.disabled = galleryItems.length < 2;
   slideZoomTrigger.disabled = false;
   slideZoomTrigger.setAttribute('aria-label', `View full-resolution photo of ${item.commonName}`);
+  requestAnimationFrame(syncCaptionHeight);
 }
 
 function openZoom(index) {
@@ -495,6 +507,8 @@ modeGrid.addEventListener('click', () => setMode('grid'));
 prevSlide.addEventListener('click', goToPrevious);
 nextSlide.addEventListener('click', goToNext);
 slideZoomTrigger.addEventListener('click', () => openZoom(currentIndex));
+slideImage.addEventListener('load', syncCaptionHeight);
+window.addEventListener('resize', syncCaptionHeight);
 
 zoomDialog.addEventListener('click', (event) => {
   if (event.target === zoomDialog) zoomDialog.close();
@@ -510,3 +524,4 @@ document.addEventListener('keydown', (event) => {
 renderSlide(currentIndex);
 renderGrid();
 setMode('slideshow');
+syncCaptionHeight();

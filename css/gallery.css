@@ -131,7 +131,7 @@ body.theme-deck a {
   gap: 1rem;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   grid-template-areas: 'image caption';
-  align-items: stretch;
+  align-items: start;
 }
 
 .gallery-image-wrap {
@@ -167,19 +167,35 @@ body.theme-deck a {
 
 .gallery-caption {
   grid-area: caption;
-  padding: 1rem;
+  position: relative;
+  box-sizing: border-box;
+  padding: 1rem 1rem 4.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* Match image column height; long facts scroll instead of moving the nav */
-  height: 0;
-  min-height: 100%;
   overflow: hidden;
+  /* Height is locked to the photo column via JS so nav never shifts */
 }
 
-.gallery-caption h2,
+.gallery-caption h2 {
+  flex: 0 0 auto;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.5em;
+}
+
 .gallery-meta {
   flex: 0 0 auto;
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.6em;
 }
 
 .gallery-fact {
@@ -189,18 +205,16 @@ body.theme-deck a {
   overflow-y: auto;
 }
 
-.gallery-meta {
-  font-size: 0.95rem;
-}
-
 .gallery-nav {
-  flex: 0 0 auto;
-  margin-top: auto;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
   flex-wrap: nowrap;
-  width: 100%;
+  width: auto;
 }
 
 .gallery-nav button {
@@ -324,8 +338,7 @@ body.theme-deck a {
   }
 
   .gallery-caption {
-    height: 16rem;
-    min-height: 16rem;
+    height: 18rem !important;
   }
 }
 
