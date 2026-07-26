@@ -426,9 +426,7 @@ function setMode(mode) {
   slideshowView.hidden = !slideshowActive;
   gridView.hidden = slideshowActive;
   modeSlideshow.setAttribute('aria-selected', String(slideshowActive));
-  modeSlideshow.setAttribute('aria-pressed', String(slideshowActive));
   modeGrid.setAttribute('aria-selected', String(!slideshowActive));
-  modeGrid.setAttribute('aria-pressed', String(!slideshowActive));
 }
 
 function renderSlide(index) {

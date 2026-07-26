@@ -115,7 +115,7 @@ body.theme-gallery a {
   cursor: pointer;
 }
 
-.gallery-mode-toggle button[aria-pressed='true'] {
+.gallery-mode-toggle button[aria-selected='true'] {
   background: var(--gallery-accent);
   color: #0b1220;
   border-color: transparent;
