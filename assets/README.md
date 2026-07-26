@@ -1,10 +1,10 @@
 # Gallery assets
 
-Field photos from around Kellogg Biological Station (Gull Lake / Hickory Corners, MI).
-
 | Path | Role |
 |------|------|
-| `assets/*.jpg` | Web previews (~1600px) used in slideshow + grid for fast loading |
-| `assets/full/*.jpg` | Full-resolution originals loaded only when someone clicks to zoom |
+| `assets/*.jpg` | JPEG fallback previews (~1600px) |
+| `assets/webp/*-960.webp` | Small WebP for fast LCP / grid |
+| `assets/webp/*.webp` | Full preview WebP (~1600px) |
+| `assets/full/*.jpg` | Camera originals — loaded only on zoom |
 
-Species names follow matching iNaturalist observations where available.
+For long cache headers on GitHub Pages, put the site behind Cloudflare (or Netlify) and use `_headers` / `netlify.toml` in this repo.

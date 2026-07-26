@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>Residents of KBS</title>
-  <link rel="stylesheet" href="./css/shared.css">
+
+  <!-- Preload LCP image early (breaks CSS→image dependency chain) -->
+  <link rel="preload" as="image" type="image/webp" href="./assets/webp/1-DSC09347-960.webp" imagesrcset="./assets/webp/1-DSC09347-960.webp 960w, ./assets/webp/1-DSC09347.webp 1600w" imagesizes="(max-width: 860px) 100vw, 62vw">
+
+  <!-- Single stylesheet; preload then apply to shorten render-block -->
+  <link rel="preload" href="./css/gallery.css" as="style">
   <link rel="stylesheet" href="./css/gallery.css">
 </head>
 <body class="theme-gallery">
@@ -29,7 +34,10 @@
           <div class="gallery-stage">
             <figure class="gallery-image-wrap">
               <button type="button" id="slide-zoom-trigger" class="gallery-zoom-trigger" aria-label="View full-resolution photo">
-                <img id="slide-image" class="gallery-image" src="./assets/1-DSC09347.jpg" alt="Four people stand on an ornate arched wooden bridge over still water at Kellogg Biological Station, with Gull Lake glowing behind them and green trees framing the scene." width="1600" height="1066" decoding="async" fetchpriority="high">
+                <picture>
+                  <source id="slide-source-webp" type="image/webp" srcset="./assets/webp/1-DSC09347-960.webp 960w, ./assets/webp/1-DSC09347.webp 1600w" sizes="(max-width: 860px) 100vw, 62vw">
+                  <img id="slide-image" class="gallery-image" src="./assets/1-DSC09347.jpg" alt="Four people stand on an ornate arched wooden bridge over still water at Kellogg Biological Station, with Gull Lake glowing behind them and green trees framing the scene." width="1600" height="1066" decoding="async" fetchpriority="high">
+                </picture>
               </button>
               <figcaption class="gallery-note" id="slide-position">Image 1 of 53</figcaption>
             </figure>

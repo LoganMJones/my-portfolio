@@ -16,14 +16,14 @@ html {
   scroll-behavior: smooth;
 }
 
-body.theme-deck {
+body.theme-gallery {
   margin: 0;
   background: var(--gallery-bg);
   color: var(--gallery-text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-body.theme-deck a {
+body.theme-gallery a {
   color: var(--gallery-accent);
 }
 

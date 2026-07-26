@@ -377,6 +377,7 @@ const gridView = document.getElementById('grid-view');
 const modeSlideshow = document.getElementById('mode-slideshow');
 const modeGrid = document.getElementById('mode-grid');
 const slideImage = document.getElementById('slide-image');
+const slideSourceWebp = document.getElementById('slide-source-webp');
 const slideZoomTrigger = document.getElementById('slide-zoom-trigger');
 const slidePosition = document.getElementById('slide-position');
 const slideCommonName = document.getElementById('slide-common-name');
@@ -392,8 +393,17 @@ const captionPanel = document.querySelector('.gallery-caption');
 
 let currentIndex = 0;
 
+function assetBase(src) {
+  return src.replace('./assets/', '').replace(/\.jpg$/i, '');
+}
+
 function fullSrcFor(src) {
   return src.replace('./assets/', './assets/full/');
+}
+
+function webpSrcset(src) {
+  const base = assetBase(src);
+  return `./assets/webp/${base}-960.webp 960w, ./assets/webp/${base}.webp 1600w`;
 }
 
 function syncCaptionHeight() {
@@ -430,8 +440,12 @@ function renderSlide(index) {
   }
 
   const item = galleryItems[index];
+  if (slideSourceWebp) {
+    slideSourceWebp.srcset = webpSrcset(item.src);
+  }
   slideImage.src = item.src;
   slideImage.alt = item.alt;
+  slideImage.fetchPriority = index === 0 ? 'high' : 'auto';
   slidePosition.textContent = `Image ${index + 1} of ${galleryItems.length}`;
   slideCommonName.textContent = item.commonName;
   slideScientificName.innerHTML = `Scientific name: <em>${item.scientificName}</em>`;
@@ -486,17 +500,26 @@ function renderGrid() {
       slideshowView.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
+    const picture = document.createElement('picture');
+    const source = document.createElement('source');
+    source.type = 'image/webp';
+    source.srcset = webpSrcset(item.src);
+    source.sizes = '(max-width: 860px) 50vw, 20vw';
+
     const img = document.createElement('img');
     img.src = item.src;
     img.alt = item.alt;
     img.loading = 'lazy';
     img.decoding = 'async';
+    img.width = 400;
+    img.height = 400;
 
+    picture.append(source, img);
     const copy = document.createElement('div');
     copy.className = 'gallery-card-copy';
     copy.innerHTML = `<strong>${item.commonName}</strong><span>${item.scientificName}</span>`;
 
-    button.append(img, copy);
+    button.append(picture, copy);
     card.appendChild(button);
     galleryGrid.appendChild(card);
   });
