@@ -242,10 +242,18 @@ body.theme-gallery a {
   padding: 0;
 }
 
-.gallery-grid-card img {
+.gallery-grid-card picture {
+  display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  background: #0a0d12;
+}
+
+.gallery-grid-card img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   background: #0a0d12;
   display: block;
 }
