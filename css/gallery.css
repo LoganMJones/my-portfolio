@@ -162,7 +162,12 @@ body.theme-deck a {
   display: flex;
   justify-content: space-between;
   gap: 0.75rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.gallery-nav button {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .gallery-grid {
