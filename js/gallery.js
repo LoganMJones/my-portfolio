@@ -8,10 +8,10 @@ const galleryItems = [
   },
   {
     src: './assets/2-DSC09385.jpg',
-    alt: 'Macro side view of a male non-biting midge with large feathery antennae, a slender tan body, spotted wings, and long thin legs on a mossy textured surface.',
-    commonName: 'Non-biting Midge',
-    scientificName: 'Chironomidae',
-    fact: 'Male midges use those plumose antennae to pick up the wingbeat rhythm of females in mating swarms—and chironomids never bite.'
+    alt: 'Macro side view of a male midge with large feathery antennae, a slender tan body, spotted wings, and long thin legs on a mossy textured surface.',
+    commonName: 'Midge',
+    scientificName: 'Diptera',
+    fact: 'Many male midges have plumose antennae that help them detect females in mating swarms.'
   },
   {
     src: './assets/3-DSC09391.jpg',
@@ -155,10 +155,10 @@ const galleryItems = [
   },
   {
     src: './assets/23-DSC00340.jpg',
-    alt: 'Side profile of a common musk turtle held in soft light, duckweed flecking its rough dark shell and a pale stripe running along its upturned head.',
-    commonName: 'Common Musk Turtle',
-    scientificName: 'Sternotherus odoratus',
-    fact: 'Nicknamed the “stinkpot,” this turtle can release a musky odor from scent glands when threatened.'
+    alt: 'Side profile of a small dark turtle held in soft light, duckweed flecking its rough shell and a pale stripe running along its upturned head.',
+    commonName: 'Turtle',
+    scientificName: 'Testudines',
+    fact: 'Small aquatic turtles often carry duckweed and algae on their shells after time in still water.'
   },
   {
     src: './assets/24-DSC00377.jpg',
@@ -233,9 +233,9 @@ const galleryItems = [
   {
     src: './assets/34-DSC00900.jpg',
     alt: 'A cluster of translucent tan spherical eggs under a veil of white silk sits on a lichen-flecked branch against a black background.',
-    commonName: 'Spider Eggs',
-    scientificName: 'Araneae',
-    fact: 'Many spiders wrap eggs in silk sacs that protect developing spiderlings from weather, parasites, and predators.'
+    commonName: 'Arthropod Eggs',
+    scientificName: 'Arthropoda',
+    fact: 'Many arthropods wrap egg clusters in silk that helps protect developing young from weather and predators.'
   },
   {
     src: './assets/35-DSC00972.jpg',
